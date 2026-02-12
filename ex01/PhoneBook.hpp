@@ -6,7 +6,7 @@
 /*   By: alejandj <alejandj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 12:59:36 by alejandj          #+#    #+#             */
-/*   Updated: 2026/02/12 13:51:59 by alejandj         ###   ########.fr       */
+/*   Updated: 2026/02/12 20:43:02 by alejandj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <string>
 #include <iostream>
+#include <iomanip>
 #include "Contact.hpp"
 #include "colors.hpp"
 
@@ -26,7 +27,7 @@ class PhoneBook
 	public:
 		PhoneBook();
 		int addContact(void);
-		void listContacts(void);
+		int searchContact(void);
 };
 
 #endif
