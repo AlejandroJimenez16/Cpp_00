@@ -6,7 +6,7 @@
 /*   By: alejandj <alejandj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 12:23:21 by alejandj          #+#    #+#             */
-/*   Updated: 2026/02/12 14:06:00 by alejandj         ###   ########.fr       */
+/*   Updated: 2026/02/12 20:44:11 by alejandj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,13 @@ int	main(void)
 			}
 		}
 		else if (input == "SEARCH")
-			std::cout << "BUSCANDO..." << std::endl;
+		{
+			if (pb.searchContact())
+			{
+				std::cout << std::endl;
+				return (0);		
+			}
+		}
 		else if (input == "EXIT")
 		{
 			std::cout << "Exiting... Bye 👋" << std::endl;

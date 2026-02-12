@@ -6,7 +6,7 @@
 /*   By: alejandj <alejandj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 14:36:20 by alejandj          #+#    #+#             */
-/*   Updated: 2026/02/12 14:11:37 by alejandj         ###   ########.fr       */
+/*   Updated: 2026/02/12 20:43:31 by alejandj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,5 +113,53 @@ int PhoneBook::addContact()
 	index = (index + 1) % 8;
 	
 	std::cout << BOLD << GREEN << "✅ Contact added successfully!" << RESET << std::endl;
+	return (0);
+}
+
+static void	print_table(int index, Contact contact_list[8])
+{
+	std::cout << "+----------+----------+----------+----------+" << std::endl;
+	std::cout << "|     Index|First_name| Last_name|  Nickname|" << std::endl;
+	std::cout << "+----------+----------+----------+----------+" << std::endl;
+	
+	int i = 0;	
+	while (i < index)
+	{
+		std::cout << "|" << std::setw(10) << i << "|";
+
+		if (contact_list[i].get_first_name().length() > 10)
+			std::cout << contact_list[i].get_first_name().substr(0, 9) << ".|";
+		else
+			std::cout << std::setw(10) << contact_list[i].get_first_name() << "|"; 
+		
+		if (contact_list[i].get_last_name().length() > 10)
+			std::cout << contact_list[i].get_last_name().substr(0, 9) << ".|";
+		else
+			std::cout << std::setw(10) << contact_list[i].get_last_name() << "|"; 
+
+		if (contact_list[i].get_nickname().length() > 10)
+			std::cout << contact_list[i].get_nickname().substr(0, 9) << ".|";
+		else
+			std::cout << std::setw(10) << contact_list[i].get_nickname() << "|";
+			
+		std::cout << std::endl;
+		i++; 
+	}
+	std::cout << "+----------+----------+----------+----------+" << std::endl;
+}
+
+int PhoneBook::searchContact()
+{	
+	std::string input;
+	
+	print_table(index, contact_list);
+	
+	std::cout << std::endl;
+	std::cout << "Inset index: ";
+	std::getline(std::cin, input);
+
+	if (std::cin.eof())
+		return (-1);
+
 	return (0);
 }
