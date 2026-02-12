@@ -6,11 +6,13 @@
 /*   By: alejandj <alejandj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 14:03:18 by alejandj          #+#    #+#             */
-/*   Updated: 2026/02/11 17:01:30 by alejandj         ###   ########.fr       */
+/*   Updated: 2026/02/12 13:15:15 by alejandj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
+
+Contact::Contact(){}
 
 Contact::Contact(
     const std::string first_name,
