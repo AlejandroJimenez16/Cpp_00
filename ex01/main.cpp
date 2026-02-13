@@ -6,7 +6,7 @@
 /*   By: alejandj <alejandj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 12:23:21 by alejandj          #+#    #+#             */
-/*   Updated: 2026/02/12 20:44:11 by alejandj         ###   ########.fr       */
+/*   Updated: 2026/02/13 19:44:54 by alejandj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int	main(void)
 		}
 		else if (input == "SEARCH")
 		{
-			if (pb.searchContact())
+			if (pb.searchContact() == -1)
 			{
 				std::cout << std::endl;
 				return (0);		
@@ -58,7 +58,7 @@ int	main(void)
 		}
 		else if (input == "EXIT")
 		{
-			std::cout << "Exiting... Bye 👋" << std::endl;
+			std::cout << BOLD << MAGENTA << "Exiting... Bye 👋"<< RESET << std::endl;
 			return (0);
 		}
 		else
