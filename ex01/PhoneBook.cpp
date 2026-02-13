@@ -6,7 +6,7 @@
 /*   By: alejandj <alejandj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 14:36:20 by alejandj          #+#    #+#             */
-/*   Updated: 2026/02/12 20:43:31 by alejandj         ###   ########.fr       */
+/*   Updated: 2026/02/13 13:23:17 by alejandj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 PhoneBook::PhoneBook()
 {
     this->index = 0;
+	this->count = 0;
 }
 
 static int check_letters(std::string str)
@@ -111,19 +112,21 @@ int PhoneBook::addContact()
 	Contact c(first_name, last_name, nickname, phone_number, darkest_secret);
 	contact_list[index] = c;
 	index = (index + 1) % 8;
+	if (count < 8)
+		count++;
 	
 	std::cout << BOLD << GREEN << "✅ Contact added successfully!" << RESET << std::endl;
 	return (0);
 }
 
-static void	print_table(int index, Contact contact_list[8])
+static void	print_table(int count, Contact contact_list[8])
 {
 	std::cout << "+----------+----------+----------+----------+" << std::endl;
 	std::cout << "|     Index|First_name| Last_name|  Nickname|" << std::endl;
 	std::cout << "+----------+----------+----------+----------+" << std::endl;
 	
 	int i = 0;	
-	while (i < index)
+	while (i < count)
 	{
 		std::cout << "|" << std::setw(10) << i << "|";
 
@@ -152,7 +155,7 @@ int PhoneBook::searchContact()
 {	
 	std::string input;
 	
-	print_table(index, contact_list);
+	print_table(count, contact_list);
 	
 	std::cout << std::endl;
 	std::cout << "Inset index: ";
