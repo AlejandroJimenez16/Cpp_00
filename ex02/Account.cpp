@@ -6,7 +6,7 @@
 /*   By: alejandj <alejandj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/15 20:02:15 by alejandj          #+#    #+#             */
-/*   Updated: 2026/02/16 17:13:49 by alejandj         ###   ########.fr       */
+/*   Updated: 2026/02/17 13:06:11 by alejandj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,5 +105,46 @@ void Account::makeDeposit(int deposit)
 			  << ";deposit:" << deposit
 			  << ";amount:" << _amount
 			  << ";nb_deposits:" << _nbDeposits
+			  << std::endl;
+}
+
+bool Account::makeWithdrawal(int withdrawal)
+{
+	if (_amount < withdrawal)
+	{
+		_displayTimestamp();
+		std::cout << "index:" << _accountIndex
+				  << ";p_amount:" << _amount
+				  << ";withdrawal:refused"
+				  << std::endl;
+		return (false);
+	}
+	_totalAmount -= withdrawal;
+	_totalNbWithdrawals++;
+	_amount -= withdrawal;
+	_nbWithdrawals++;
+	
+	_displayTimestamp();
+	std::cout << "index:" << _accountIndex
+			  << ";p_amount:" << _amount + withdrawal
+			  << ";withdrawal:" << withdrawal
+			  << ";amount:" << _amount
+			  << ";nb_withdrawals:" << _nbWithdrawals
+			  << std::endl;
+	return (true);
+}
+
+int Account::checkAmount() const
+{
+	return (_amount);
+}
+
+void Account::displayStatus() const
+{
+	_displayTimestamp();
+	std::cout << "index:" << _accountIndex
+			  << ";amount:" << _amount
+			  << ";deposits:" << _nbDeposits
+			  << ";withdrawals:" << _nbWithdrawals
 			  << std::endl;
 }
