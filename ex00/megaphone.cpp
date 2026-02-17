@@ -6,7 +6,7 @@
 /*   By: alejandj <alejandj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 14:15:46 by alejandj          #+#    #+#             */
-/*   Updated: 2026/02/09 17:36:30 by alejandj         ###   ########.fr       */
+/*   Updated: 2026/02/17 13:43:06 by alejandj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ int	main(int argc, char **argv)
 			std::cout << ft_toupper(argv[i][j]);
 			j++;
 		}
+		if (i < argc - 1)
+			std::cout << " ";
 		i++;
 	}
 	std::cout << std::endl;
