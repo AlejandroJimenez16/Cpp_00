@@ -6,7 +6,7 @@
 /*   By: alejandj <alejandj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 14:36:20 by alejandj          #+#    #+#             */
-/*   Updated: 2026/02/13 19:50:15 by alejandj         ###   ########.fr       */
+/*   Updated: 2026/02/17 14:44:56 by alejandj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -155,6 +155,9 @@ static void	print_table(int count, Contact contact_list[8])
 			std::cout << std::setw(10) << contact_list[i].get_nickname() << "|";
 			
 		std::cout << std::endl;
+		
+		if (i < count - 1) 
+			std::cout << "+----------+----------+----------+----------+" << std::endl;
 		i++; 
 	}
 	std::cout << "+----------+----------+----------+----------+" << std::endl;
