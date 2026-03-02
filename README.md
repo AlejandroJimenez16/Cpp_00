@@ -2,7 +2,7 @@
 
 ## Objective
 
-The goal of `cpp - module 00` is to introduce the user to **Object-Oriented Programming (OOP)**.  
+The goal of `CPP Module 00` is to introduce the user to **Object-Oriented Programming (OOP)**.  
 In this project, you will learn about **class declaration**, **attributes**, **method declaration**, **namespaces**, **standard I/O streams**, and other fundamental C++ concepts.
 
 ## Project structure
