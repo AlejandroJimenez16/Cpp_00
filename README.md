@@ -64,29 +64,29 @@ This exercise consists of a program that allows the user to **store and display 
 **Contact**
 
 *Private attributes:*
-- `first_name`
-- `last_name`
-- `nickname`
-- `phone_number`
-- `darkest_secret`
+- `std::string first_name`
+- `std::string last_name`
+- `std::string nickname`
+- `std::string phone_number`
+- `std::string darkest_secret`
 
 *Public methods:*
-- `get_first_name()`
-- `get_last_name()`
-- `get_nickname()`
-- `get_phone_number()`
-- `get_darkest_secret()`
+- `std::string get_first_name()`
+- `std::string get_last_name()`
+- `std::string get_nickname()`
+- `std::string get_phone_number()`
+- `std::string get_darkest_secret()`
 
 **PhoneBook**
 
 *Private attributes:*
-- `index`
-- `count`
+- `int index`
+- `int count`
 - `Contact contact_list[8]`
 
 *Public methods:*
-- `addContact()`
-- `searchContact()`
+- `int addContact(void)`
+- `int searchContact(void)`
 
 **Example usage:**
 
@@ -148,32 +148,32 @@ You are also provided with a tests.cpp file and an output log. The goal is to re
 **Account**
 
 *Private attributes:*
-- `_accountIndex`
-- `_amount`
-- `_nbDeposits`
-- `_nbWithdrawals`
+- `int _accountIndex`
+- `int _amount`
+- `int _nbDeposits`
+- `int _nbWithdrawals`
 
 *Private static attributes:*
-- `_nbAccounts`
-- `_totalAmount`
-- `_totalNbDeposits`
-- `_totalNbWithdrawals`
+- `static int _nbAccounts`
+- `static int _totalAmount`
+- `static int _totalNbDeposits`
+- `static int _totalNbWithdrawals`
 
 *Private static methods:*
-- `_displayTimestamp()`
+- `static void _displayTimestamp()`
 
 *Public static methods:*
-- `getNbAccounts()`
-- `getTotalAmount()`
-- `getNbDeposits()`
-- `getNbWithdrawals()`
-- `displayAccountsInfos()`
+- `static int getNbAccounts(void)`
+- `static int getTotalAmount(void)`
+- `static int getNbDeposits(void)`
+- `static int getNbWithdrawals(void)`
+- `static void displayAccountsInfos(void)`
 
 *Public methods:*
-- `makeDeposit(int deposit)`
-- `makeWithdrawal(int withdrawal)`
-- `checkAmount() const`
-- `displayStatus() const`
+- `void makeDeposit(int deposit)`
+- `bool makeWithdrawal(int withdrawal)`
+- `int checkAmount(void) const`
+- `void displayStatus(void) const`
 
 **Example usage:**
 
